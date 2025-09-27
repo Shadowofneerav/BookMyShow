@@ -1,6 +1,10 @@
 package com.example.bookmyshow.models;
 
-public enum SeatType {
-    AVAILABLE,
-    UNAVAILABLE
+import jakarta.persistence.Entity;
+import lombok.Data;
+
+@Data
+@Entity
+public class SeatType extends BaseModel {
+    private String value;
 }
