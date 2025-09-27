@@ -6,5 +6,5 @@ import lombok.Data;
 public class ShowSeat extends BaseModel {
     private Show show;
     private Seat seat;
-    private SeatStatus seatStatus;
+    private ShowSeatStatus seatStatus;
 }

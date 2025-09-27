@@ -2,6 +2,7 @@ package com.example.bookmyshow.models;
 
 import lombok.Data;
 
+import java.util.Date;
 import java.util.List;
 @Data
 public class Booking extends BaseModel{
@@ -10,4 +11,5 @@ public class Booking extends BaseModel{
     private List<Payment> payments;
     private double price;
     private List<ShowSeat> shows;
+    private Date bookedAt;
 }

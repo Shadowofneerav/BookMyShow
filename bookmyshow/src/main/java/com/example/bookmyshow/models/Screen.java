@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 public class Screen extends BaseModel {
-    private int number;
+    private String name;
     private List<Seat> seats;
     private List<Feature> features;
     private ScreenStatus screenStatus;
