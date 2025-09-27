@@ -1,6 +1,6 @@
 package com.example.bookmyshow.models;
 
-public enum BookingStatus {
+public enum SeatStatus {
     BOOKED,
-    NOT_BOOKED,
+    NOT_BOOKED
 }

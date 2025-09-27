@@ -1,6 +1,6 @@
 package com.example.bookmyshow.models;
 
-public enum SeatType {
+public enum ScreenStatus {
     AVAILABLE,
-    UNAVAILABLE
+    NOT_AVAILABLE,
 }
