@@ -45,7 +45,7 @@ public class BookingService {
 
         Booking booking = new Booking();
         booking.setUser(user.get());
-        booking.setShows(showSeats);
+        booking.setShows(savedShowSeats);
         booking.setBookingStatus(BookingStatus.PENDING);
         booking.setPrice(priceCalculatorService.calculatePrice(showSeats));
         return booking;
