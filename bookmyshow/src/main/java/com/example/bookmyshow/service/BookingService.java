@@ -3,6 +3,7 @@ package com.example.bookmyshow.service;
 import com.example.bookmyshow.exception.SeatNotAvaliableException;
 import com.example.bookmyshow.exception.UserNotFoundException;
 import com.example.bookmyshow.models.*;
+import com.example.bookmyshow.repository.BookingRepository;
 import com.example.bookmyshow.repository.ShowSeatRepository;
 import com.example.bookmyshow.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -18,10 +19,12 @@ public class BookingService {
     private UserRepository userRepository;
     private ShowSeatRepository showSeatRepository;
     private PriceCalculatorService priceCalculatorService;
+    private BookingRepository bookingRepository;
     public BookingService(UserRepository userRepository, ShowSeatRepository showSeatRepository, PriceCalculatorService priceCalculatorService) {
         this.userRepository = userRepository;
         this.showSeatRepository = showSeatRepository;
         this.priceCalculatorService = priceCalculatorService;
+        this.bookingRepository = bookingRepository;
     }
     @Transactional(isolation = Isolation.SERIALIZABLE)
     public Booking createBooking(List<Long> showSeatIds, Long userId) throws UserNotFoundException, SeatNotAvaliableException {
@@ -48,6 +51,6 @@ public class BookingService {
         booking.setShows(savedShowSeats);
         booking.setBookingStatus(BookingStatus.PENDING);
         booking.setPrice(priceCalculatorService.calculatePrice(showSeats));
-        return booking;
+        return bookingRepository.save(booking);
     }
 }

@@ -27,6 +27,7 @@ public class UserController {
         User signedUpUser = userService.signUp(user);
         return to(signedUpUser);
     }
+    @PostMapping("/signin")
     public Boolean signIn(@RequestBody UserSignInRequestDto userSignInRequestDto) throws UserNotFoundException {
         return userService.signIn(userSignInRequestDto.getEmail(), userSignInRequestDto.getPassword());
     }
