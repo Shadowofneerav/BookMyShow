@@ -5,5 +5,6 @@ public enum Feature {
     THREE_D,
     FOUR_D,
     DOLBY_D,
-    FOUR_DX
+    FOUR_DX,
+    ICE
 }
